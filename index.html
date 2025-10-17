@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistemista IT — Domande e Risposte (RIF96489)</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#0ea5a3;--muted:#9aa4b2;--glass:rgba(255,255,255,0.03)}
+    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; background:linear-gradient(180deg,#071022 0%, #081826 60%); color:#e6eef6}
+    .wrap{max-width:980px;margin:36px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    header{display:flex;align-items:center;gap:16px}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 18px}
+    .controls{display:flex;gap:8px;margin-bottom:16px}
+    button.btn{background:var(--accent);border:0;padding:8px 12px;border-radius:8px;color:#022;cursor:pointer;font-weight:600}
+    button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .card{background:var(--card);padding:14px;border-radius:10px;border:1px solid var(--glass)}
+    details{background:transparent;border-radius:8px;padding:8px}
+    summary{cursor:pointer;outline:none;list-style:none;display:flex;align-items:center;justify-content:space-between;padding:8px 6px}
+    .q{font-weight:700}
+    .a{color:var(--muted);margin-top:8px;line-height:1.46}
+    pre.code{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;overflow:auto;color:#d7f0ef}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:13px;color:var(--muted)}
+    @media (min-width:720px){ .grid{grid-template-columns:1fr 380px} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Sistemista IT — Domande e Risposte per il colloquio (RIF96489)</h1>
+        <p class="lead">Pagina pratica con domande frequenti, risposte brevi e suggerimenti — adatta per stampare o ripassare prima del colloquio.</p>
+        <div class="tags">
+          <span class="tag">Windows Server</span>
+          <span class="tag">Reti TCP/IP</span>
+          <span class="tag">Backup</span>
+          <span class="tag">Helpdesk</span>
+          <span class="tag">Virtualizzazione (plus)</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="controls" style="margin-top:14px">
+      <button class="btn" id="printBtn">Stampa / Salva PDF</button>
+      <button class="ghost" id="collapseAll">Chiudi tutte</button>
+      <button class="ghost" id="expandAll">Apri tutte</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin:0 0 10px">Domande tecniche comuni</h3>
+
+        <details open>
+          <summary><span class="q">1) Cos'è Active Directory e perché è importante?</span></summary>
+          <div class="a">Active Directory è un servizio di directory usato nei sistemi Windows per gestire utenti, computer, gruppi, policy di sicurezza e autenticazione centralizzata (Kerberos). È importante perché semplifica la gestione degli accessi e delle risorse in un dominio aziendale.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">2) Come risolvi un PC che non si connette a internet?</span></summary>
+          <div class="a">Controllo prima i cavi e la connettività fisica, poi eseguo ping verso il gateway e DNS. Se il ping al gateway funziona ma non risolve i nomi, controllo le impostazioni DNS. Se il problema è locale, verifico IP, gateway e parametri DHCP.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">3) Differenza tra backup completo, incrementale e differenziale?</span></summary>
+          <div class="a">Backup completo: copia tutto. Incrementale: salva solo le modifiche dall'ultimo backup (veloce, richiede più restore step). Differenziale: salva le modifiche dall'ultimo backup completo (restore più semplice, backup più grande nel tempo).</div>
+        </details>
+
+        <details>
+          <summary><span class="q">4) Come configuri una condivisione di rete con permessi?</span></summary>
+          <div class="a">Creo la cartella sul server, imposto NTFS permissions per utenti/gruppi (Read/Modify) e poi configuro le condivisioni SMB definendo permessi di condivisione. Testo con un account utente per verificare i permessi effettivi.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">5) Che strumenti usi per patching e aggiornamenti?</span></summary>
+          <div class="a">Per ambienti Windows: WSUS o soluzioni di patch management (SCCM/Intune). Per server Linux: gestori pacchetti (apt, yum) o soluzioni centralizzate come Ansible. Importante testare gli update in un ambiente pilota prima del rollout.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">6) Come monitori lo stato dei server?</span></summary>
+          <div class="a">Uso strumenti di monitoraggio (es. Zabbix, Nagios, PRTG) per CPU, RAM, disco, servizi e alert. Configuro soglie e notifiche via email/telegram per interventi proattivi.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">7) Descrivi cosa fai per assicurare la sicurezza dei sistemi.</span></summary>
+          <div class="a">Gestisco patch tempestive, antivirus/EDR, firewall, backup testati, GPO per policy di sicurezza e auditing. Applico least privilege e controllo accessi basati su gruppi.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">8) Hai esperienza con VM (Hyper-V/VMware)?</span></summary>
+          <div class="a">Risposta breve consigliata: "Sì: ho creato VM, gestito snapshot, assegnato risorse e monitorato performance. Se no, menziona che sei disposto a imparare e hai concetti base".</div>
+        </details>
+
+        <details>
+          <summary><span class="q">9) Cosa controlleresti se un servizio Windows non parte?</span></summary>
+          <div class="a">Controllo i log in Visualizzatore eventi, lo stato del servizio, dipendenze, spazio disco e permessi dell'account di servizio. Se necessario, provo a riavviare e analizzare eventuali errori specifici.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">10) Com'è fatto un controllo di accesso a un file in Windows?</span></summary>
+          <div class="a">Il controllo deriva dall'ACL NTFS (permessi utente/gruppo) e dalla condivisione SMB. I permessi effettivi sono l'intersezione tra NTFS e permessi di condivisione: il più restrittivo prevale.</div>
+        </details>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 10px">Domande comportamentali e consigli rapidi</h3>
+
+        <details open>
+          <summary><span class="q">11) Raccontami una volta in cui hai risolto un problema complesso</span></summary>
+          <div class="a">Struttura la risposta in 3 parti: Situazione — Azione — Risultato. Esempio breve: descrivi il problema, i passi tecnici eseguiti, il risultato misurabile (es. ritorno operativo in X ore).</div>
+        </details>
+
+        <details>
+          <summary><span class="q">12) Come gestisci richieste multiple in contemporanea?</span></summary>
+          <div class="a">Dai priorità agli incidenti che bloccano il lavoro, comunichi tempi stimati agli utenti e documenti tutte le azioni. Usa ticketing per tracciare e ri-prioritizzare.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">13) Qual è il tuo approccio nel spiegare problemi tecnici agli utenti?</span></summary>
+          <div class="a">Semplice e senza gergo: spiego il problema in termini di impatto sul lavoro e i passi che farò per risolverlo, con aggiornamenti regolari.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">14) Domande che puoi fare al recruiter</span></summary>
+          <div class="a">Esempi: "Quali strumenti usate per backup e monitoraggio?", "Com'è strutturato il team IT?", "Quali aspettative per i primi 3 mesi?"</div>
+        </details>
+
+        <details>
+          <summary><span class="q">15) Consigli per presentarsi al colloquio</span></summary>
+          <div class="a">Porta pochi esempi concreti, sii specifico su strumenti che conosci (es. WSUS, AD, VMware), e mostra volontà di crescere. Se sei categoria protetta, menziona la legge L.68/99 solo se richiesto o già nello screening.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">16) Come dimostrare la tua esperienza senza titoli ufficiali?</span></summary>
+          <div class="a">Parla di progetti personali o lab: VM create, server configurati, script fatti. Spiega risultati e problemi risolti — numeri concreti aiutano (es. tempo di recovery ridotto).</div>
+        </details>
+
+        <details>
+          <summary><span class="q">17) Se ti chiedono il tuo punto debole?</span></summary>
+          <div class="a">Scegli un aspetto reale e mostra come lo stai migliorando (es. "Non ero pratico di Linux ma sto seguendo corso X e ho un piccolo lab per esercitarmi").</div>
+        </details>
+
+        <details>
+          <summary><span class="q">18) Rapid-fire: domande tecniche da conoscere</span></summary>
+          <div class="a">Sii pronto a rispondere a: differenza tra TCP/UDP, cos'è un gateway, come usare ipconfig/ping/tracert, cosa controllare nei log di Windows, differenze tra RAID 1 e RAID 5.</div>
+        </details>
+
+        <details>
+          <summary><span class="q">19) Cosa mettere nel CV per questo ruolo?</span></summary>
+          <div class="a">Evidenzia: esperienza con Windows Server, Active Directory, backup, gestione patch, troubleshooting rete. Aggiungi strumenti/ software conosciuti e certificazioni (anche in corso).</div>
+        </details>
+
+        <details>
+          <summary><span class="q">20) Suggerimenti finali</span></summary>
+          <div class="a">Ripassa le basi la sera prima, prepara 2–3 esempi concreti (incidenti risolti), sii puntuale e mostrati disponibile al lavoro di squadra. Porta una copia del CV e referenze se possibile.</div>
+        </details>
+
+      </div>
+    </div>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div>Buona preparazione — pratica le risposte ad alta voce.</div>
+        <div style="color:var(--muted)">Creato per RIF96489 • Sedi richieste: Rimini, Catania • RAL indicativa</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+    document.getElementById('collapseAll').addEventListener('click', function(){ document.querySelectorAll('details').forEach(d=>d.removeAttribute('open')); });
+    document.getElementById('expandAll').addEventListener('click', function(){ document.querySelectorAll('details').forEach(d=>d.setAttribute('open','')); });
+  </script>
+</body>
+</html>
